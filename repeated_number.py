@@ -1,15 +1,5 @@
-# -*- coding: utf-8 -*-
 """
-                                     **Duplicate element in a limited range array**
-Q. Given a limited range array of size n cotaining elements between 1 and n-1 with one element repeating, find the duplicate number
-in it without using any extra space.
-
-We are given an array arr[] of size n. Numbers are from 1 to (n-1) in random order. The array has only one repetitive element. We need to find the repetitive element.
-
-SOLUTION 1: We know sum of first n-1 natural numbers is (n – 1)*n/2. We compute sum of array elements and subtract natural number sum from it to find the only missing element.
-
-Time complexity : O(n)
-Auxillary space : O(1)
+SOLUTION 1: 
 """
 
 arr = [1, 4, 2, 3, 4, 5]
@@ -19,9 +9,8 @@ originalSum = (n*(n+1))//2
 repeatingElement = sumArr - originalSum
 print(repeatingElement)
 
-"""SOLUTION 2: Use a hash table to store elements visited. If a seen element appears again, we return it.
-Time complexity : O(n)
-Auxillary space : O(n)
+"""
+SOLUTION 2: 
 """
 
 def findRepeating(arr, n):
@@ -39,18 +28,8 @@ arr = [9, 8, 2, 6, 1, 8, 5, 3]
 n = len(arr)
 print(findRepeating(arr, n))
 
-"""SOLUTION 3: The idea is based on the fact that x ^ x = 0 and x ^ y = y ^ x.
-Compute XOR of elements from 1 to n-1.
-Compute XOR of array elements.
-XOR of above two would be our result.
-
-*   Compute XOR of elements from 1 to n-1.
-*   Compute XOR of array elements.
-*   XOR of above two would be our result.
-
-Time complexity : O(n
-
-Auxillari space : O(1)
+"""
+SOLUTION 3:
 """
 
 def findRepeating(arr, n):
@@ -66,12 +45,8 @@ arr = [9, 8, 2, 6, 1, 8, 5, 3, 4, 7]
 n = len(arr)
 print(findRepeating(arr, n))
 
-"""SOLUTION 4: We can solve this problem in constant space. Since the array contains all distinct elements except one and all elements lie in range 1 to n-1, we can check for a duplicate element by marking array elements as negative using the array index as a key. For each array element nums[i], invert the sign of the element present at index nums[i]. Finally, traverse the array once again, and if a positive number is found at index i, then the duplicate element is i.
-
-The above approach takes two traversals of the array. We can achieve the same in only a single traversal. For each array element nums[i], invert the sign of the element present at index nums[i] if it is positive; otherwise, if the element is already negative, then it is a duplicate.
-
-Time complexity : O(n)
-Auxillary space : O(0)
+"""
+SOLUTION 4:
 """
 
 ef repeatingElement(arr):
